@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<style>
+    body{
+        background:blueviolet;
+    }
+.mx-auto{
+    margin-top: 160px;
+    border-radius: 5px;
+}
+</style>
+<body>
+<div class="container-fluid">
+<div class="row">
+<div id="q" class="col-sm-4 p-5 mx-auto bg-light shadow">
+<div class="text-center fs-4 fw-bold">New Password Generate</div>
+<div  class="input-group mt-3 ">
+<input id="a" class="form-control" type="password" placeholder="Password">    
+<span onclick="demo2(this)" class="input-group-text "><i class="fa-solid fa-eye-slash"></i></span>
+</div> 
+<div  class="input-group mt-3">
+<input id="b" class="form-control" type="password" placeholder="Confirm Password">    
+<span onclick="demo2(this)" class="input-group-text "><i class="fa-solid fa-eye-slash"></i></span>
+</div> 
+<div  class="input-group mt-3">
+<input onclick="demo()" class="form-control text-bg-primary " value="Confirm " type="button">    
+</div> 
+</div>
+</div>
+</div>
+<script>
+var demo=()=>
+{
+var a=document.querySelector("#a")    
+var b=document.querySelector("#b") 
+var q=document.querySelector("#q")
+
+if(a.value.length>=8)
+{
+if(a.value!=b.value)
+{
+    alert("Invalid Your Password")
+    a.style.color="red"
+    q.style.color="red"
+    b.style.color="red"
+}
+else{
+    alert("valid Your Password")
+    a.style.color="green"
+    b.style.color="green"
+    q.style.color="green"
+}
+}
+else
+{
+alert("please Enter 8 digit")   
+}
+}
+function demo2(x)
+{
+if(a.type=="password")
+{
+a.type="text"
+b.type="text"
+x.innerHTML="<i class='fa-solid fa-eye'></i>"    
+}
+else
+{
+a.type="password"
+b.type="password"
+x.innerHTML="<i class='fa-solid fa-eye'></i>"      
+}
+}
+</script>
+</body>
+</html>
